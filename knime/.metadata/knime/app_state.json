@@ -1,0 +1,31 @@
+{
+  "version" : "5.11.0.v202603030810",
+  "projects" : [ {
+    "name" : "26E2-infnet-trabalho-pd-mineracao-de-dados-para-series-temporais-copy",
+    "active" : true,
+    "origin" : {
+      "providerId" : "local",
+      "spaceId" : "local",
+      "relativePath" : "26E2-infnet-trabalho-pd-mineracao-de-dados-para-series-temporais-copy"
+    }
+  } ],
+  "mostRecentlyUsedProjects" : [ {
+    "name" : "26E2-infnet-trabalho-pd-mineracao-de-dados-para-series-temporais",
+    "timeUsed" : "2026-05-26T08:28:48.837065556-03:00",
+    "origin" : {
+      "providerId" : "local",
+      "spaceId" : "local",
+      "projectType" : "WORKFLOW",
+      "relativePath" : "26E2-infnet-trabalho-pd-mineracao-de-dados-para-series-temporais"
+    }
+  }, {
+    "name" : "26E2-infnet-trabalho-pd-mineracao-de-dados-para-series-temporais-copy",
+    "timeUsed" : "2026-05-26T08:33:59.117377666-03:00",
+    "origin" : {
+      "providerId" : "local",
+      "spaceId" : "local",
+      "projectType" : "WORKFLOW",
+      "relativePath" : "26E2-infnet-trabalho-pd-mineracao-de-dados-para-series-temporais-copy"
+    }
+  } ]
+}
