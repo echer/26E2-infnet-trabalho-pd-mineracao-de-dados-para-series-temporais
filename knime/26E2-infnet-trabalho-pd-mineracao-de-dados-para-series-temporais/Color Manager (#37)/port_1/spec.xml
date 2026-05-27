@@ -53,7 +53,7 @@
             <config key="upper_bound">
                 <entry key="datacell" type="xstring" value="org.knime.core.data.def.IntCell"/>
                 <config key="org.knime.core.data.def.IntCell">
-                    <entry key="IntCell" type="xint" value="51"/>
+                    <entry key="IntCell" type="xint" value="32"/>
                 </config>
             </config>
         </config>
@@ -103,7 +103,7 @@
             <config key="upper_bound">
                 <entry key="datacell" type="xstring" value="org.knime.core.data.def.DoubleCell"/>
                 <config key="org.knime.core.data.def.DoubleCell">
-                    <entry key="DoubleCell" type="xdouble" value="660.4499999999999"/>
+                    <entry key="DoubleCell" type="xdouble" value="223.74999999999997"/>
                 </config>
             </config>
         </config>
