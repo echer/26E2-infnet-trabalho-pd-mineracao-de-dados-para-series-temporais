@@ -98,8 +98,12 @@ Foram utilizados gráficos de autocorrelação (ACF Plot) para analisar a depend
 
 ![](./assets/acf_linear_correlation_table.png)
 
-# TODO GRAFICO PACF PLOT
-Os gráficos PACF foram utilizados para identificar dependências diretas entre observações temporais e auxiliar na definição dos parâmetros do modelo ARIMA. Observou-se redução gradual da correlação parcial conforme o aumento das defasagens temporais.
+# Gráfico PACF
+O gráfico de autocorrelação parcial (PACF) foi utilizado para identificar quais defasagens possuem influência direta sobre a série temporal de vendas.
+Os resultados mostraram maior influência nos lags 1, 7, 14, 21 e 28, evidenciando forte sazonalidade semanal e dependência temporal direta entre observações separadas por múltiplos de 7 períodos.
+Os coeficientes intermediários apresentaram baixa magnitude, indicando que boa parte da dependência temporal da série é explicada pela estrutura sazonal semanal.
+
+![](./assets/pacf_linear_regression.png)
 
 # Gráfico decomposição
 A série temporal foi decomposta manualmente em três componentes principais: Tendência, sazonalidade e resíduo.
@@ -121,8 +125,6 @@ Os resíduos do modelo foram avaliados utilizando o componente Analyze ARIMA Res
 
 # TODO CONTINUAR AQUI
 
-ACF	⚠️ falta executar
-PACF	⚠️ falta executar
 ARIMA	⚠️ falta executar
 Forecast	⚠️ falta executar
 Analyze Residuals	⚠️ falta executar
