@@ -64,7 +64,7 @@ A análise temporal permitiu identificar padrões repetitivos de consumo, mostra
 ![](./assets/tendencia_sexta_sabado.png)
 
 ### As vendas do restaurante apresentam tendência de crescimento ou queda ao longo do tempo?
-A decomposição temporal permitiu identificar a tendência da série temporal utilizando médias móveis. Com isso, foi possível verificar o comportamento de longo prazo das vendas e confirmar uma tendencia de crescimento no faturamente ao longo da serie temporal.
+A decomposição temporal permitiu identificar a tendência da série temporal utilizando médias móveis. Com isso, foi possível verificar o comportamento de longo prazo das vendas e confirmar uma tendencia de crescimento no faturamento ao longo da serie temporal.
 
 ![](./assets/tendencia_crescimento.png)
 
@@ -116,68 +116,19 @@ A recomposição da série apresentou valores muito próximos da série original
 
 ![](./assets/grafico_recomposicao.png)
 
-# TODO GRAFICO ARIMA
-Foi utilizado o componente ARIMA Learner do KNIME para treinamento do modelo ARIMA aplicado à série temporal de vendas. A seleção do melhor modelo foi realizada utilizando o critério AIC (Akaike Information Criterion), buscando minimizar a perda de informação do modelo.
+# Gráfico ARIMA
 
-Após o treinamento, foi utilizado o componente ARIMA Predictor para geração de previsões futuras (forecast) da série temporal.
+Para escolha do melhor modelo ARIMA foi utilizado o critério AIC (Akaike Information Criterion). O AIC avalia a qualidade do ajuste penalizando modelos excessivamente complexos. Quanto menor o valor do AIC, melhor tende a ser o equilíbrio entre ajuste e simplicidade do modelo.
 
-Os resíduos do modelo foram avaliados utilizando o componente Analyze ARIMA Residuals, permitindo verificar o comportamento aleatório dos erros e validar a qualidade estatística do modelo.
+O modelo ARIMA ajustado apresentou boa aderência à série temporal original, sendo observado que os valores ajustados (“fitted values”) acompanharam adequadamente o comportamento das vendas ao longo do tempo.
+Isso indica que o modelo conseguiu capturar parte significativa da tendência e sazonalidade presentes na série temporal.
 
-# TODO CONTINUAR AQUI
+Foram avaliados diferentes modelos ARIMA, incluindo ARIMA(1,1,1), ARIMA(7,1,1) e ARIMA(1,1,7). O modelo ARIMA(7,1,1) apresentou melhor desempenho considerando os critérios estatísticos, ajuste visual da série e análise residual.
 
-ARIMA	⚠️ falta executar
-Forecast	⚠️ falta executar
-Analyze Residuals	⚠️ falta executar
+![](./assets/arima_models.png)
 
+![](./assets/arima_grafico.png)
 
-PERGUNTAS
-Antes de fazer sua entrega, reúna todos os arquivos relativos ao seu Projeto de Disciplina em um único arquivo no formato .zip e poste no Moodle. Utilize o seu nome para nomear o arquivo, identificando também a disciplina, como no exemplo: “nomedoaluno_nomedadisciplina_pd.zip”.
-R:
+A análise dos resíduos do modelo ARIMA mostrou comportamento aproximadamente aleatório ao longo do tempo, com oscilações em torno de zero e ausência de padrões evidentes de tendência ou sazonalidade. Esse comportamento indica que o modelo ARIMA conseguiu capturar adequadamente a estrutura temporal presente na série de vendas. Apesar da presença de alguns picos extremos, os resíduos apresentaram comportamento compatível com ruído branco, validando estatisticamente a qualidade do ajuste do modelo.
 
-AVALIAÇÃO
-1. Utilizar uma base de dados temporal armazenada em formato CSV ou SQL
-   O Aluno escolheu uma base de série temporal?
-1. Utilizar uma base de dados temporal armazenada em formato CSV ou SQL
-   O aluno ilustrou os problemas que ele pode resolver com a base?
-1. Utilizar uma base de dados temporal armazenada em formato CSV ou SQL
-   O aluno descreveu as váriaveis presentes na série?
-1. Utilizar uma base de dados temporal armazenada em formato CSV ou SQL
-   O aluno usou medidas estatísticas para descrever a série?
-2. Explorar dados com a plataforma Knime
-   O Aluno apresentou um print demonstando ter o Knime instalado no computador?
-2. Explorar dados com a plataforma Knime
-   O aluno mostrou um print demonstrando ter os componentes necessários no computador?
-2. Explorar dados com a plataforma Knime
-   O aluno mostrou um print demonstrando ter python instalado no computador?
-2. Explorar dados com a plataforma Knime
-   O aluno mostrou um print demonstrando que a integração KNIME com Python funciona?
-3. Identificar a diferença entre processos determinísticos e estocásticos
-   O Aluno explicou o que é um processo estocástico?
-3. Identificar a diferença entre processos determinísticos e estocásticos
-   O Aluno explicou o que é um processo deterministico?
-3. Identificar a diferença entre processos determinísticos e estocásticos
-   O Aluno explicou o que é a sazonalidade estocástica?
-3. Identificar a diferença entre processos determinísticos e estocásticos
-   O aluno explicou a diferença entre sazonalidade estocástica e deterministica?
-3. Identificar a diferença entre processos determinísticos e estocásticos
-   O Aluno explicou o que é a sazonalidade deterministica?
-4. Criar gráficos com séries temporais
-   O aluno criou um gráfico temporal para cara variável da base de dados
-4. Criar gráficos com séries temporais
-   O Aluno criou um gráfico da função de autocorrelação para cada série da base de dados?
-4. Criar gráficos com séries temporais
-   O Aluno criou um gráfico da função de correlação parcial para cada série da base de dados?
-4. Criar gráficos com séries temporais
-   O aluno criou um gráfico das séries decompostas para cada variável da base de dados?
-5. Calcular a tendência e a sazonalidade de séries temporais para diferentes bases de dados
-   O aluno usou o componente Decompose Signal para remover a tendência de todas as séries do trabalho?
-5. Calcular a tendência e a sazonalidade de séries temporais para diferentes bases de dados
-   O aluno usou o componente Decompose Signal para remover a sazonalidade de todas as séries do trabalho?
-5. Calcular a tendência e a sazonalidade de séries temporais para diferentes bases de dados
-   O aluno criou um modelo ARIMA?
-5. Calcular a tendência e a sazonalidade de séries temporais para diferentes bases de dados
-   O aluno avaliou o modelo usando IAC?
-5. Calcular a tendência e a sazonalidade de séries temporais para diferentes bases de dados
-   O Aluno realizou um forecast de dados?
-5. Calcular a tendência e a sazonalidade de séries temporais para diferentes bases de dados
-   O Aluno avaliou o resíduo da predição do modelo ARIMA?
+![](./assets/arima_ruido.png)
