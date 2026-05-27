@@ -64,31 +64,75 @@ A análise temporal permitiu identificar padrões repetitivos de consumo, mostra
 ![](./assets/tendencia_sexta_sabado.png)
 
 ### As vendas do restaurante apresentam tendência de crescimento ou queda ao longo do tempo?
-A decomposição temporal permitiu identificar a tendência da série temporal utilizando médias móveis. Com isso, foi possível verificar o comportamento de longo prazo das vendas e analisar um leve crescimento no faturamente ao longo da serie temporal.
+A decomposição temporal permitiu identificar a tendência da série temporal utilizando médias móveis. Com isso, foi possível verificar o comportamento de longo prazo das vendas e confirmar uma tendencia de crescimento no faturamente ao longo da serie temporal.
 
 ![](./assets/tendencia_crescimento.png)
 
+# Processo Estocástico
+Processo estocástico é um processo que possui comportamento aleatório ao longo do tempo, apresentando incertezas e variações imprevisíveis. No nosso caso as vendas do restaurante podem ser consideradas um processo estocástico, pois sofrem influência de diversos fatores externos, como clima, promoções, feriados e comportamento dos clientes.
 
+# Processo Deterministico
+Processo determinístico é um processo cujo comportamento pode ser previsto de maneira exata a partir de regras fixas, sem presença de aleatoriedade. Nesse tipo de processo, os mesmos valores de entrada sempre produzem os mesmos resultados, é como se uma variavel tenha uma forte correlação com a outra, quando uma aumenta a outra também ou quando diminui.
+
+# Sazonalidade Estocástica
+Sazonalidade estocástica ocorre quando os padrões sazonais apresentam comportamento repetitivo, porém com intensidade variável ao longo do tempo. No nosso caso, por exemplo, os finais de semana normalmente possuem maior volume de vendas, mas essa intensidade pode variar entre diferentes períodos.
+
+# Sazonalidade Determinística
+Sazonalidade determinística ocorre quando os padrões sazonais se repetem de forma fixa e previsível ao longo do tempo, mantendo comportamento praticamente constante entre os ciclos temporais.
+
+# Sazonalidade aditiva vs multiplicativa
+Na sazonalidade aditiva, a amplitude do componente sazonal permanece aproximadamente constante ao longo do tempo. O efeito sazonal é somado à tendência da série temporal (Y=T+S+R).
+
+Na sazonalidade multiplicativa, o efeito sazonal varia proporcionalmente ao nível da série temporal. Quanto maior a série, maior tende a ser a amplitude da sazonalidade.
+
+# Gráficos
+Foram construídos gráficos temporais utilizando a variável temporal data no eixo X e as variáveis quantitativas no eixo Y, permitindo analisar o comportamento temporal das vendas, tendência, sazonalidade e ruido da série ao longo do tempo. Os gráficos mostraram crescimento gradual das vendas e forte comportamento sazonal semanal.
+
+# Gráfico ACF
+
+Foram observados picos significativos nos lags 7, 14, 21 e 28, evidenciando comportamento sazonal semanal.
+
+Foram utilizados gráficos de autocorrelação (ACF Plot) para analisar a dependência temporal das variáveis ao longo do tempo.
+
+![](./assets/acf_grafico.png)
+
+![](./assets/acf_linear_correlation_table.png)
+
+# TODO GRAFICO PACF PLOT
+Os gráficos PACF foram utilizados para identificar dependências diretas entre observações temporais e auxiliar na definição dos parâmetros do modelo ARIMA. Observou-se redução gradual da correlação parcial conforme o aumento das defasagens temporais.
+
+# Gráfico decomposição
+A série temporal foi decomposta manualmente em três componentes principais: Tendência, sazonalidade e resíduo.
+
+A tendência foi calculada utilizando média móvel de 30 períodos. A sazonalidade foi obtida agrupando os valores detrended (sem_tendencia) por dia da semana (day_of_week). O resíduo foi calculado pela diferença entre a série original e os componentes estimados.
+![](./assets/grafico_decomposicao.png)
+
+# Gráfico recomposição
+A recomposição da série apresentou valores muito próximos da série original, validando a decomposição realizada.
+
+![](./assets/grafico_recomposicao.png)
+
+# TODO GRAFICO ARIMA
+Foi utilizado o componente ARIMA Learner do KNIME para treinamento do modelo ARIMA aplicado à série temporal de vendas. A seleção do melhor modelo foi realizada utilizando o critério AIC (Akaike Information Criterion), buscando minimizar a perda de informação do modelo.
+
+Após o treinamento, foi utilizado o componente ARIMA Predictor para geração de previsões futuras (forecast) da série temporal.
+
+Os resíduos do modelo foram avaliados utilizando o componente Analyze ARIMA Residuals, permitindo verificar o comportamento aleatório dos erros e validar a qualidade estatística do modelo.
 
 # TODO CONTINUAR AQUI
 
+ACF	⚠️ falta executar
+PACF	⚠️ falta executar
+ARIMA	⚠️ falta executar
+Forecast	⚠️ falta executar
+Analyze Residuals	⚠️ falta executar
 
 
-Com suas palavras explique:
-Processo estocástico
-Processo determinístico
-Sazonalidade estocástica
-Sazonalidade determinística
-Sazonalidade aditiva vs multiplicativa
-Em relação à base escolhida:
-Faça gráficos onde cada variável não sequencial é usada no eixo-Y e a sequencial é o eixo-X
-Faça um gráfico de autocorrelação para cada uma das variáveis (ACF Plot)
-Faça um gráfico de correlação parcial para cada uma das variáveis (PACF Plot)
-Decomponha as variáveis em: Tendência, Sazonalidade e Resíduo. Faça um gráfico
-Construa um modelo ARIMA para cada variável da base de dados e faça uma previsão (forecast) baseado nele. Use Akaike Information Critera para definir o melhor modelo ARIMA possível. Análise o resíduo do modelo de predição, com o número correto de graus de liberdade. (use os componentes ARIMA Predictor, ARIMA Learner e Analyze ARIMA Residuals)
+PERGUNTAS
 Antes de fazer sua entrega, reúna todos os arquivos relativos ao seu Projeto de Disciplina em um único arquivo no formato .zip e poste no Moodle. Utilize o seu nome para nomear o arquivo, identificando também a disciplina, como no exemplo: “nomedoaluno_nomedadisciplina_pd.zip”.
+R:
 
-
+AVALIAÇÃO
 1. Utilizar uma base de dados temporal armazenada em formato CSV ou SQL
    O Aluno escolheu uma base de série temporal?
 1. Utilizar uma base de dados temporal armazenada em formato CSV ou SQL
